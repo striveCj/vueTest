@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body class="native"> 
+		<div id="example">
+			<p v-if="greeting">Hello</p>
+			<p v-else="greeting">chenjie</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var exampleVM2=new Vue({
+			el:"#example",
+			data:{
+				greeting:false
+			}
+		})
+	</script>
+</html>
