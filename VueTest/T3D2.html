@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body id="example">
+		<form>
+			姓名：
+			<input type="text" v-model="data.name" />
+			<br /> 性别：
+			<input type="radio" name="one" id="one" value="One" v-model="data.sex" />
+			<label for="man">男</label>
+			<input type="radio" name="two" id="two" value="Two" v-model="data.sex" />
+			<label for="male">女</label>
+			<br /> 兴趣：
+			<input type="checkbox" id="jack" value="book" v-model="data.interest" />
+			<label for="jack">阅读</label>
+			<input type="checkbox" id="john" value="swim" v-model="data.interest" />
+			<label for="john">游泳</label>
+			<input type="checkbox" id="mike" value="game" v-model="data.interest" />
+			<label for="mike">游戏</label>
+			<input type="checkbox" id="mike" value="song" v-model="data.interest" />
+			<label for="mike">唱歌</label>
+			<br /> 身份：
+			<select v-model="data.identity">
+				<option value="teacher" selected="selected">教师</option>
+				<option value="doctor">医生</option>
+				<option value="lawyer">律师</option>
+			</select>
+		</form>
+	</body>
+<script type="text/javascript">
+	new Vue({
+		el:"#example",
+		data:{
+			data:{
+				name:"",
+				sex:"",
+				interest:[],
+				identity:''
+			}
+		}
+
+	})
+
+</script>
+</html>

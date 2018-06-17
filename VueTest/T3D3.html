@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body id="example">
+		<input type="text" v-model="msg" /><br />
+		{{msg}}
+	</body>
+	<script  type="text/javascript">
+		var exampleVM2=	new Vue({
+			el:"#example",
+			data:{
+				msg:"内容是在change事件后才改变的~"
+			}
+		})
+	</script>
+</html>
