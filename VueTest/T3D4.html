@@ -9,7 +9,7 @@
 
 	<body>
 		<div id="example">
-			<input v-model.lazy="msg"><br /> {{msg}}
+			<input v-model="msg" debounce="5000" ><br /> {{msg}}
 		</div>
 
 	</body>
@@ -17,7 +17,7 @@
 		var exampleVM2 = new Vue({
 			el: "#example",
 			data: {
-				msg: "内容是在change事件后才改变的~"
+				msg: "内容是在5000ms后才改变的~"
 			}
 		})
 	</script>

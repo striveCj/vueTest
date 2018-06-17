@@ -9,15 +9,26 @@
 
 	<body>
 		<div id="example">
-			<input v-model.lazy="msg"><br /> {{msg}}
+			<ul id="demo">
+				<li v-for="(item, index) in items">
+				{{index}}-{{parentMsg}}  {{item.childMsg}}
+				</li>
+			</ul>
 		</div>
 
 	</body>
 	<script type="text/javascript">
-		var exampleVM2 = new Vue({
-			el: "#example",
+		var demo = new Vue({
+			el: "#demo",
 			data: {
-				msg: "内容是在change事件后才改变的~"
+				parentMsg: "滴滴",
+				items: [{
+						childMsg: '顺风车'
+					},
+					{
+						childMsg: '专车'
+					}
+				]
 			}
 		})
 	</script>
