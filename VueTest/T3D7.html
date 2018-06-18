@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="demo">
+		<div :class="[classA,{classB:isB,classC:isC}]"></div>
+		<div v-bind="{id:someProp,'OtHerAttr':otherProp}">
+			
+		</div>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		var demo = new Vue({
+			el: "#demo",
+			data: {
+				classA:'A',
+				isB:false,
+				isC:true,
+				someProp:'idName',
+				otherProp:'prop'
+			}
+		})
+	</script>
+
+</html>

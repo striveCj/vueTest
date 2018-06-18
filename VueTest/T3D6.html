@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="example">
+			<input v-model="name" />
+			<ul id="demo">
+				<li v-for="user in newUsers">
+				{{user.name}}
+				</li>
+			</ul>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		var demo = new Vue({
+			el: "#demo",
+			data: {
+				name:'',
+				users:[
+				{name:'快车',tag:'1'},
+				{name:'出租车',tag:'2'},
+				{name:'顺风车',tag:'3'},
+				{name:'专车',tag:'4'}
+				]
+			},
+            computed: {
+                newUsers: function () {
+                    var that = this;
+                    return that.users.filter(function (user) {
+                    	console.log(user.name);
+                    	console.log(that.name);
+                        return user.name.toLowerCase().indexOf(that.name.toLowerCase()) !== -1;
+                    })
+                }
+
+            }
+		})
+	</script>
+
+</html>
