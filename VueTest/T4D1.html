@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="example">
+					<input type="text" v-model="didi"/>
+			<input type="text" v-model="family"/>
+			<br />
+			didi={{didi}},family={{family}},didiFamily={{didiFamily}}
+		</div>
+
+	</body>
+	<script>
+		var vm=new Vue({
+			el:"#example",
+			data:{
+				didi:'didi',
+				family:'family'
+			},
+			computed:{
+				didiFamily:function(){
+					return this.didi+this.family
+				}
+			}
+		})
+	</script>
+</html>
