@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="example">
+	<button @click="toggleShow">ToggleShow Total Price</button>
+	<p v-if="showTotal">Total Price={{totalPrice}}</p>
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:"#example",
+			data:{
+				showTotal:true,
+				basePrice:100
+			},
+			computed:{
+				totalPrice:function(){
+					return this.basePrice+1
+				}
+			},
+			methods:{
+				click:function(){
+					this.showTotal=!this.showTotal
+				}
+			}
+		})
+	</script>
+</html>
