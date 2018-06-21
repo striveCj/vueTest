@@ -19,8 +19,13 @@
 					<input type="checkbox" id="bus" value="bus" v-model="bizLines" />
 					<label for="flash">巴士</label>
 					<br />
-					<span>Checked lines:{{bizLines|json}}</span>
-		
+					<span>Checked lines:{{bizLines}}</span>
+					<br />
+					<input type="radio" id="flashr" value="flashr" v-model="bizLine" />
+					<label for="flash">快2</label>
+					<input type="radio" id="premiumr" value="premiumr" v-model="bizLine" />
+					<label for="flash">专2</label>
+					<span>Checked Picked:{{bizLine}}</span>
 		</div>
 	</body>
 	<script>
@@ -28,7 +33,8 @@
 			el:"#app",
 			data:{
 				name:'',
-				bizLines:[]
+				bizLines:[],
+				bizLine:''
 			}
 		})
 	</script>
