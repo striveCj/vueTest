@@ -1,41 +1,62 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-			<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
 	</head>
+
 	<body>
 		<div id="app">
-	
+
 			<input type="text" v-model="name" placeholder="join DDFE" />
-				<br />
-					<span>Welcome {{name}} join DDFE</span>
-					<br />
-					<input type="checkbox" id="flash" value="flash" v-model="bizLines" />
-					<label for="flash">快车</label>
-					<input type="checkbox" id="premium" value="premium" v-model="bizLines" />
-					<label for="flash">专车</label>
-					<input type="checkbox" id="bus" value="bus" v-model="bizLines" />
-					<label for="flash">巴士</label>
-					<br />
-					<span>Checked lines:{{bizLines}}</span>
-					<br />
-					<input type="radio" id="flashr" value="flashr" v-model="bizLine" />
-					<label for="flash">快2</label>
-					<input type="radio" id="premiumr" value="premiumr" v-model="bizLine" />
-					<label for="flash">专2</label>
-					<span>Checked Picked:{{bizLine}}</span>
+			<br />
+			<span>Welcome {{name}} join DDFE</span>
+			<br />
+			<input type="checkbox" id="flash" value="flash" v-model="bizLines" />
+			<label for="flash">快车</label>
+			<input type="checkbox" id="premium" value="premium" v-model="bizLines" />
+			<label for="flash">专车</label>
+			<input type="checkbox" id="bus" value="bus" v-model="bizLines" />
+			<label for="flash">巴士</label>
+			<br />
+			<span>Checked lines:{{bizLines}}</span>
+			<br />
+			<input type="radio" id="flashr" value="flashr" v-model="bizLine" />
+			<label for="flash">快2</label>
+			<input type="radio" id="premiumr" value="premiumr" v-model="bizLine" />
+			<label for="flash">专2</label>
+			<span>Checked Picked:{{bizLine}}</span>
+			<br />
+			<select v-model="selBizLine">
+				<option selected="selected" value="selflash">快车</option>
+				<option value="selpremium">专车</option>
+				<option>巴士</option>
+
+			</select>
+			<span>Selected:{{selBizLine}}</span>
+			<br />
+			<select v-model.multiple="selBizLines">
+				<option selected="selected" value="selflash">快车</option>
+				<option value="selpremium">专车</option>
+				<option>巴士</option>
+			</select>
+			<span>Selected:{{selBizLines}}</span>
+			<br />
 		</div>
 	</body>
 	<script>
-		var vm=new Vue({
-			el:"#app",
-			data:{
-				name:'',
-				bizLines:[],
-				bizLine:''
+		var vm = new Vue({
+			el: "#app",
+			data: {
+				name: '',
+				bizLines: [],
+				bizLine: '',
+				selBizLine: '',
+				selBizLines: []
 			}
 		})
 	</script>
+
 </html>
