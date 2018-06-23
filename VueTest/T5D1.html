@@ -44,6 +44,10 @@
 			</select>
 			<span>Selected:{{selBizLines}}</span>
 			<br />
+			<select v-model="sel2bizLine">
+				<option v-for="option in options" :value="option.value">{{option.text}}</option>
+			</select>
+			<span>Selected:{{sel2bizLine}}</span>
 		</div>
 	</body>
 	<script>
@@ -54,7 +58,13 @@
 				bizLines: [],
 				bizLine: '',
 				selBizLine: '',
-				selBizLines: []
+				selBizLines: [],
+				sel2bizLine:'',
+				options:[
+				{value:'flashO',text:'快车'},
+				{value:'premiumO',text:'专车'},
+				{value:'busO',text:'巴士'},
+				]
 			}
 		})
 	</script>
