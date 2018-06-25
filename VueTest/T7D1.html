@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+				<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="example" class="static" v-bind:class="{'didi-orange':isRipe,'didi-green':isNotRipe}">
+			
+			<div v-bind:class="ddfe"></div>
+			<div v-bind:class="ddfe2"></div>
+			<div v-bind:class="[didiHandsome,didiBeautiful]"></div>
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:'#example',
+			data:{
+				isRipe:true,
+				isNotRipe:false,
+				ddfe:{
+					'didi-orange':true,
+					'didi-green':false
+				},
+				didiAge:4,
+				didiMember:6000,
+				didiHandsome:'didi-handsome',
+				didiBeautiful:'didi-beautiful'
+			},
+			computed:{
+				ddfe2:function(){
+					return{
+					'didi-orange':this.didiAge>3?true:false,
+					'didi-green':this.didiMember>1000?true:false
+					}
+				}
+			}
+		})
+	</script>
+</html>
