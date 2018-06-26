@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="example" v-bind:style="{color:didiColor,fontSize:fontSize+'px'}">
+			<div v-bind></div>
+		</div>
+	</body>
+	<script>
+		var vm=new Vue({
+			el:"#example",
+			data:{
+				didiColor:'orange',
+				fontSize:30
+			}
+		});
+	</script>
+</html>
