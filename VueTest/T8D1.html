@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.expand-transition{
+				transition: all .3s ease;
+				height: 30px;
+				padding: 10px;
+				background-color: #eee;
+				overflow: hidden; 
+			}
+			.expand-enter,.expand-leave{
+				height: 0;
+				padding: 0 10px;
+				opacity: 0;
+			}
+		</style>
+		<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!--
+            	作者：530216775@qq.com
+            	时间：2018-06-27
+            	描述：
+            	<div v-if="show" transition="expand"></div>
+            -->
+			<div v-if="show" :transition="transitionName"></div>
+		</div>
+		<script>
+			var vm=new Vue({
+				el:"#app",
+				data:{
+					show:false,
+					transitionName:'fade'
+				}
+			})
+		</script>
+	</body>
+</html>

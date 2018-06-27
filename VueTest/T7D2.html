@@ -7,7 +7,8 @@
 	</head>
 	<body>
 		<div id="example" v-bind:style="{color:didiColor,fontSize:fontSize+'px'}">
-			<div v-bind></div>
+			<div v-bind:style="ddfe"></div>
+			<div v-bind:style="ddfes"></div>
 		</div>
 	</body>
 	<script>
@@ -15,7 +16,20 @@
 			el:"#example",
 			data:{
 				didiColor:'orange',
-				fontSize:30
+				fontSize:30,
+				ddfe:{
+					color:'orange',
+					fontSize:'13px'
+				}
+				
+			},
+			computed:{
+				ddfes:function(){
+					return{
+						color:this.fontSize>30?'orange':'green',
+						fontSize:this.fontSiza<30?'20px':'30px'
+					}
+				}
 			}
 		});
 	</script>
