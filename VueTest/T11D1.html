@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<didi-component></didi-component>
+		</div>
+		
+	</body>
+	<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var DIDIComponent=Vue.extend({
+			template:'<div>A custom component!</div>'
+		})
+		Vue.component('didi-component',DIDIComponent);
+		new Vue({
+			el:"#app"
+		})
+	</script>
+</html>

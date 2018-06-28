@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="example">
+			<button v-on:click="greet">Greet</button>
+		</div>
+		<div id="example-2">
+			<button v-on:click="say('hi')">Say Hi</button>
+			<button v-on:click="says('hello',$event)">Submit</button>
+		<!--	<button v-on:click="count=count+1">Say What</button>-->
+		</div>
+	</body>
+	<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		var vm=new Vue({
+			el:"#example",
+			methods:{
+				greet:function(event){
+					alert('Welcome to Vue.js By cj');
+					alert(event.target.tagName);
+				}
+			}
+		})
+		var vm2=new Vue({
+			el:"#example-2",
+			methods:{
+				say:function(msg){
+					alert(msg);
+				},
+				says:function(msg,event){
+					event.preventDefault();
+					console.log(event.clientX)
+					alert(msg);
+				}
+			}
+		})
+	</script>
+</html>
