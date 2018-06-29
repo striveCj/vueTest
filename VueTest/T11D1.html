@@ -8,7 +8,12 @@
 		<div id="app">
 			<didi-component></didi-component>
 		</div>
-		
+		<div id="example">
+			<didi-component2></didi-component2>
+		</div>
+		<div id="demo">
+			<child msg="hello" my-Component=" my friend"></child>
+		</div>
 	</body>
 	<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
@@ -18,6 +23,27 @@
 		Vue.component('didi-component',DIDIComponent);
 		new Vue({
 			el:"#app"
+		})
+		
+		Vue.component('didi-component2',DIDIComponent);
+		new Vue({
+			el:"#example"
+		})
+		
+		var Parent=Vue.extend({
+			components:{
+				'didi-component2':{
+					template:'<div>A custom component</div>'
+				}
+			}
+		})
+
+   		Vue.component('child',{
+   			props:['msg','myComponent'],
+   			template:'<span>{{msg}}{{myComponent}},ddfe</span>'
+   		})
+   		new Vue({
+			el:"#demo"
 		})
 	</script>
 </html>
