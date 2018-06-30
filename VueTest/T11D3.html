@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
 	</head>
+
 	<body>
 		<div id="example">
 			<input type="radio" id="one" value="fast" v-model="currentView" />
 			<label for="one">fast</label>
-			
+			<br>
+			<input type="radio" id="two" value="bus" v-model="currentView" />
+			<label for="two">bus</label>
+			<br>
+			<input type="radio" id="one" value="business" v-model="currentView" />
+			<label for="two">business</label>
+			<br>
 		</div>
+		<template id="bus">
+			<div>滴滴巴士</div>
+		</template>
+		<template id="business">
+			<div>滴滴专车</div>
+		</template>
+		<template id="fast">
+			<div>滴滴快车</div>
+		</template>
+		<component :is="currentView"></component>
 	</body>
+	<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		var bus = Vue.extend({
+			template: "#bus",
+			replace: true
+		})
+		var fast = Vue.extend({
+			template: "#fast",
+			replace: true
+		})
+		var business = Vue.extend({
+			template: "#business",
+			replace: true
+		})
+	var vm=	new Vue({
+			el: "#example",
+			data: {
+				currentView: 'fast'
+			},
+			components: {
+				fast: fast,
+				bus: bus,
+				business: business
+			}
+		})
+		
+		console.log(vm.currentView);
+	</script>
+
 </html>
