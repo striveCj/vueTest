@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<template id="child-template">
+			<div>
+				<input v-model="msg" />
+				<button v-on:click="notify">Dispath Event</button>
+			</div>
+
+		</template>
+
+		<div id="events-example">
+			<p>Message:{{messages}}</p>
+			<child></child>
+		</div>
+	</body>
+	<script src="js/Vue-2.5.16.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		Vue.component('child', {
+			template: "#child-template",
+			data: function() {
+				return {
+					msg: 'hello'
+				}
+			},
+			methods: {
+				notify: function() {
+					if(this.msg.trim()) {
+						this.$emit('child-msg', this.msg)
+						this.msg = ''
+					}
+				}
+			}
+		})
+
+		var parent = new Vue({
+			el: "#events-example",
+			data: {
+				messages: []
+			},
+			events: {
+				'child-msg': function(msg) {
+					console.log(msg);
+					this.messages.push(msg);
+				}
+			}
+		})
+	</script>
+
+</html>
