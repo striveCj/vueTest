@@ -22,3 +22,11 @@ cnpm install vue-cli -g
 
 使用Git Bash
 1.查看当前路径:pwd
+
+Webpack的使用
+1.安装Webpack 
+npm install --save-dev webpack
+
+Vuejs安装
+1.npm install vue vue-cli -g(表示这个安装包可以被全局使用)
+2.运行vue 
