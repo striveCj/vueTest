@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>你好，{{name}}!</p>
+        <input type="text" v-model="name"/>
+    </div>
+    <script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            name: '学习Vue.js使我快乐~'
+        }
+    })
+    </script>
+</body>
+</html>
