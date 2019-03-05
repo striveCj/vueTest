@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+</head>
+<body>
+
+    <script type="text/javascript">
+        //全局变量a
+        var a = 1;
+        function one() {
+            console.info(a);
+        }
+
+        function two(a) {
+            console.info('a is' + a);
+        }
+
+        function four() {
+            console.info(' in four, before a=4' + a);
+            if (true) {
+                a = 4;
+            }
+            console.info(' in four, before a=4' + a);
+        }
+    </script>
+</body>
+</html>
