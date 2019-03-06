@@ -23,7 +23,27 @@
                 a = 4;
             }
             console.info(' in four, before a=4' + a);
+
         }
+
+        four(4);
+        //通过元编程定义的函数
+        var six = (function() {
+            var foo = 6;
+            return function() {
+                return foo;
+            }
+        }());
+        var foo=1
+        var temp = (function() {
+            var foo = 6;
+            return function() {
+                console.info("in six, foo is:" + foo);
+            }
+
+        }());
+
+
     </script>
 </body>
 </html>
