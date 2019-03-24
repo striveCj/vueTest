@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+
+<body>
+<div id="app">
+    下面是使用了自定义Directive的input<br/>
+    <br/>
+    <input v-my-input:foo.click="say_hi"/>
+</div>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+          say_hi:'你好啊，我是个value'  
+        },
+        directives: {
+            "my-input": {
+                inserted: function(element,binding,vnode) {
+                    element.focus()
+                    console.info("binding.name:" + binding.name)
+                    console.info("binding.value:" + binding.value)
+                    console.info("binding.expression:" + binding.expression)
+                    console.info("binding.argument:" + binding.arg)
+                    console.info("binding.modifiers：")
+                    console.info(binding.modifiers)
+                    console.info("vnode keys:")
+                    console.info(vnode)
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
